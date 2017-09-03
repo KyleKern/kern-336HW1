@@ -1,0 +1,46 @@
+  body{
+    background-color: #79B4A9 !important;
+    }
+   header, main, nav, footer{
+                text-align: center;
+            }
+            nav a:hover{ /*pseudo class*/
+            border-bottom:2px orange solid;
+            font-size: 2em;
+            transition: .9s; /*transition effect */
+            }
+            #me{
+                float:left;
+                width: 45%;
+            }
+            footer{
+                clear: left;
+                background-color: #BDE4A8;
+            }
+             h1{
+                font-family: 'Pacifico', cursive;
+                font-size: 4em;
+                margin-bottom: 0px;
+                background-color: #D7F2BA;
+            }
+            #welcomeText{
+                float: right;
+                width: 45%;
+                background-color: #94A187;
+            }
+             #CplusText{
+                float: right;
+                width: 45%;
+                background-color: #D7F2BA;
+                color: gray;
+            }
+            #javafacts{
+                float: left;
+                width: 45%;
+                 background-color: #D7F2BA;
+                color: gray;
+            }
+            #javaLogo{
+                float: right;
+                width: 45%;
+            }
