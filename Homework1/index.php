@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>"Home page"</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -8,12 +9,13 @@
             <h1>Programming Facts</h1>
         </header>
         <nav> 
-            <hr width="50%"/>
-            <a href="index.php" color= white><strong> Home </strong></a>
+           <div id="selection">
+            <a href="index.php"><strong> Home </strong></a>
             <a href="Cplus.html"> C++  </a>
             <a href="java.html"> Java </a>
              <a href="python.html"> Python </a>
             <a href="contact.html">Contact</a>
+            </div>
         </nav>
         <br /><br />
         <main>
@@ -27,7 +29,7 @@
                 <p> on the pages ill go into more depth about what kinds of programming you can do with C++</p>
                 <br /><br />
             </div>
-            <div style="clear: both;">
+            <div style="clear: both;"/>
         </main>
         <footer>
             <hr>

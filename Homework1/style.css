@@ -13,6 +13,11 @@
                 float:left;
                 width: 45%;
             }
+            #selection{
+                
+              width: 50%;
+                
+            }
             footer{
                 clear: left;
                 background-color: #BDE4A8;
@@ -34,7 +39,7 @@
                 background-color: #D7F2BA;
                 color: gray;
             }
-            #javafacts{
+            #java-facts{
                 float: left;
                 width: 45%;
                  background-color: #D7F2BA;
