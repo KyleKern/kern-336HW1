@@ -5,7 +5,7 @@ function randomize(){
     $starters2 = array("Treecko","Torchic","Mudkip","Ralts","turtwig","chimchar","piplup","snivy","tepig","oshawott");
     
     array_push($starters1,"Pikachu");
-    
+    array_push($starters2,"rowlett");
     $randostarter1 = $starters1[mt_rand(0,count($starters1)-1)];
     $randostarter2 = $starters2[mt_rand(0,count($starters2)-1)];
     $rannum = mt_rand(0,20);
