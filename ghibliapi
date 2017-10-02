@@ -1,0 +1,47 @@
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.Scanner;
+
+public class hw4 {
+	public static void main(String[] args){
+		
+		Scanner keyboard = new Scanner(System.in);
+		String searching = keyboard.next();
+		apiCall(searching);
+}
+	public static boolean apiCall(String searching) {
+		if(searching.equals("movies")||searching.equals("releases")) {
+			searching="films";
+		}
+		if(searching.equals("airplane")||searching.equals("car")||searching.equals("boat")) {
+			System.out.printf("changing "+searching+" to vehicles for api call");
+			searching="vehicles"; 
+		}
+		if(searching.equals("places")) {
+			searching="locations";
+		}
+		if(searching.equals("men")||searching.equals("female")) {
+			searching="people";
+		}
+		if(searching.equals("spirits")||searching.equals("cat")) {
+			searching="species";
+		}
+		if(searching.equals(null)) {
+			return false;
+		}
+		try {
+			URL url = new URL("https://ghibliapi.herokuapp.com/"+searching);
+			BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+			String strTemp="";
+			while (null !=(strTemp=br.readLine())) {
+				System.out.println(strTemp);
+			}
+		}catch(Exception ex) {
+			System.out.println("input invalid! try again...");
+			return false;
+		}
+		return true;
+		}
+}
