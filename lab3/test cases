@@ -1,0 +1,35 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class hw4Test {
+	@Test
+	public void boundry() {
+		assertNull(null);
+		assertEquals(true, hw4.apiCall("films"));
+		assertEquals(true, hw4.apiCall("vehicles"));
+		assertEquals(true, hw4.apiCall("people"));
+		assertEquals(true, hw4.apiCall("locations"));
+		assertEquals(true, hw4.apiCall("species"));
+	}
+	@Test
+	public void crosscheck() {
+		assertEquals(true, hw4.apiCall("movies"));
+		assertEquals(true, hw4.apiCall("airplane"));
+		assertEquals(true, hw4.apiCall("places"));
+		assertEquals(true, hw4.apiCall("spirits"));
+		assertEquals(true, hw4.apiCall("men"));
+		assertEquals(true, hw4.apiCall("releases"));
+	}
+	@Test
+	public void forceErrors() {
+		assertEquals(false, hw4.apiCall("aaaaaaaaaaaaaaaaaaaaaaaa"));
+		assertEquals(false, hw4.apiCall("movie"));
+		assertEquals(false, hw4.apiCall("plces"));
+		
+	}
+	@Test
+	public void performance() {
+		
+	}
+}
