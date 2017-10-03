@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class hw4 {
+	public static void main(String[] args){
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Keywords: films, locations, species, vehicles, people");
+		System.out.println("Input search keyword: ");
+		String searching = keyboard.next();
+		apihandler.apiCall(searching);
+	}
+}
