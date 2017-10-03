@@ -1,35 +1,66 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class hw4Test {
 	@Test
-	public void boundry() {
-		assertNull(null);
-		assertEquals(true, hw4.apiCall("films"));
-		assertEquals(true, hw4.apiCall("vehicles"));
-		assertEquals(true, hw4.apiCall("people"));
-		assertEquals(true, hw4.apiCall("locations"));
-		assertEquals(true, hw4.apiCall("species"));
+	public void keyphrases() {
+		assertEquals(true, apihandler.apiCall("films"));
+		assertEquals(true, apihandler.apiCall("vehicles"));
+		assertEquals(true, apihandler.apiCall("people"));
+		assertEquals(true, apihandler.apiCall("locations"));
+		assertEquals(true, apihandler.apiCall("species"));
 	}
 	@Test
-	public void crosscheck() {
-		assertEquals(true, hw4.apiCall("movies"));
-		assertEquals(true, hw4.apiCall("airplane"));
-		assertEquals(true, hw4.apiCall("places"));
-		assertEquals(true, hw4.apiCall("spirits"));
-		assertEquals(true, hw4.apiCall("men"));
-		assertEquals(true, hw4.apiCall("releases"));
+	public void nullTest() {
+		assertNull(apihandler.apiCall(null));
 	}
+	@Test
+	public void synonymsFilms() {
+		assertEquals(true, apihandler.apiCall("movies"));
+		assertEquals(true, apihandler.apiCall("releases"));
+	}
+	@Test
+	public void synonymsVehicles() {
+		assertEquals(true, apihandler.apiCall("airplane"));
+		assertEquals(true, apihandler.apiCall("car"));
+		assertEquals(true, apihandler.apiCall("boat"));
+	}
+	@Test
+	public void synonymsLocations() {
+		assertEquals(true, apihandler.apiCall("places"));
+		assertEquals(true, apihandler.apiCall("areas"));
+	}
+	@Test
+	public void synonymsSpecies() {
+		assertEquals(true, apihandler.apiCall("spirits"));
+		assertEquals(true, apihandler.apiCall("men"));
+	}
+		
 	@Test
 	public void forceErrors() {
-		assertEquals(false, hw4.apiCall("aaaaaaaaaaaaaaaaaaaaaaaa"));
-		assertEquals(false, hw4.apiCall("movie"));
-		assertEquals(false, hw4.apiCall("plces"));
-		
+		assertEquals(false, apihandler.apiCall("aaaaaaaaaaaaaaaaaaaaaaaa"));
+		assertEquals(false, apihandler.apiCall("movie"));
+		assertEquals(false, apihandler.apiCall("plces"));
 	}
 	@Test
-	public void performance() {
-		
+	public void executionTimeTrue() {
+		final long startTime = System.currentTimeMillis();
+		assertEquals(true, apihandler.apiCall("films"));
+		final long endTime = System.currentTimeMillis();
+		System.out.println("Total execution time 1: " + (endTime - startTime) );
+	}
+	@Test
+	public void executionTimeSynonyms() {
+		final long startTime2 = System.currentTimeMillis();
+		assertEquals(true, apihandler.apiCall("spirits"));
+		final long endTime2 = System.currentTimeMillis();
+		System.out.println("Total execution time 2: " + (endTime2 - startTime2) );
+	}
+	@Test
+	public void executionTimeFalse() {
+		final long startTime3 = System.currentTimeMillis();
+		assertEquals(false, apihandler.apiCall("aaaaaaaaaaaa"));
+		final long endTime3 = System.currentTimeMillis();
+		System.out.println("Total execution time 3: " + (endTime3 - startTime3) );
 	}
 }
